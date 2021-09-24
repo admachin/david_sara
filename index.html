@@ -1,20 +1,17 @@
 <!DOCTYPE HTML>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
+	<head>
+    	<meta charset="UTF-8">
 		<title>Tinder</title>
 		<script src='logic.js'></script>
-		<script src='NinjaAdventures.js'></script>
-    <link rel=stylesheet type="text/css" href="styles.css">
+    	<link rel=stylesheet type="text/css" href="styles.css">
   </head>
 
   <body>
-    <h1>Tinder</h1>
-
-    <label>Introduce tu nombre para saber quién es tu pareja: </label><input type="text" id="guest" />
-    <button onclick="showMatch()">Obtener</button>
-
-    <h2 hidden id="output_1">Tu pareja es:</h2>
-    <p hidden id="output_2">...</p>
+  	<div>
+  		<p1 class="header-text">Introduce tu código de invitado:</p1>
+  		<input class="guest-input" type="text"/>
+  		<button class="roll" onclick="rollClick()">Descubrir</button>
+  	</div>
   </body>
 </html>
