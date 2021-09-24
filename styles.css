@@ -19,6 +19,18 @@ body
   align-items: center
   text-align: center
 
+.header-text
+  color: white
+  font-size: 4rem
+  margin: 1rem
+  
+.guest-input
+  color: darken($bg, 3%)
+  background-color: white
+  border-radius: 3em
+  font-size: 3rem
+  padding: .2em .5em
+  
 .roll
   cursor: pointer
   appearance: none
@@ -29,7 +41,7 @@ body
   font-family: $fontFamily
   font-weight: 900
   border: 5px solid $white
-  padding: .5em 2em
+  padding: .2em 2em
   border-radius: 3em
   transition: 200ms ease-in-out
   &:hover
