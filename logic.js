@@ -1,53 +1,53 @@
 const ENTRANTS = new Map(
-  [
-    ["Adolfo", "ValorAdolfo"],
-    ["David", "ValorDavid"],
-    ["Alberto", "ValorAlberto"],
-    ["Rubén", "ValorRubén"]
-  ]
+	[
+		["Adolfo", "ValorAdolfo"],
+		["David", "ValorDavid"],
+		["Alberto", "ValorAlberto"],
+		["Rubén", "ValorRubén"]
+	]
 );
 
-const rollEl = document.querySelector(".roll");
-const namesEl = document.querySelector(".names");
-const winnerEl = document.querySelector(".winner");
+const namesElement = document.getElementById("names");
+const winnerElement = document.getElementById("winner");
+const discoverButton = document.getElementById("discover-button");
 
 function randomName() {
-  const rand = Math.floor(Math.random() * ENTRANTS.size);
-  const key = Array.from(ENTRANTS.keys())[rand];
-  const name = ENTRANTS.get(key);
-  namesEl.innerText = name;
+	const rand = Math.floor(Math.random() * ENTRANTS.size);
+	const key = Array.from(ENTRANTS.keys())[rand];
+	const name = ENTRANTS.get(key);
+	namesElement.innerText = name;
 }
 
 function rollClick() {
-  rollEl.classList.add("hide");
-  winnerEl.classList.add("hide");
-  namesEl.classList.remove("hide");
+	discoverButton.disabled = true;
+	namesElement.style.display = "block";	// Show names element
+	winnerElement.style.display = "none";	// Hide winner element
+	
+	setDeceleratingTimeout(randomName, 10, 30);
 
-  setDeceleratingTimeout(randomName, 10, 30);
-
-  setTimeout(() => {
-    namesEl.classList.add("hide");
-    winnerEl.classList.remove("hide");
-
-    const guest = document.getElementById("text-input").value;
-    var winner = "Nadie quiere a Milhouse :(";
-    if(ENTRANTS.has(guest)) {
-      winner = ENTRANTS.get(guest);
-    }
-    winnerEl.innerHTML = `<span>And the winner is...</span><br>${winner}`;
-    rollEl.classList.remove("hide");
-  }, 4000);
+	setTimeout(() => {
+		namesElement.style.display = "none";	// Hide names element
+		winnerElement.style.display = "block";	// Show winner element
+		discoverButton.disabled = false;
+		
+		const guest = document.getElementById("text-input").value;
+		var winner = "Nadie quiere a Milhouse :(";
+		if(ENTRANTS.has(guest)) {
+			winner = ENTRANTS.get(guest);
+		}
+		winnerElement.innerHTML = `<span>Tu pareja es...</span><br>${winner}`;
+	}, 4000);
 }
 
 function setDeceleratingTimeout(callback, factor, times) {
-  const internalCallback = ((t, counter) => {
-    return () => {
-      if (--t > 0) {
-        setTimeout(internalCallback, ++counter * factor);
-        callback();
-      }
-    };
-  })(times, 0);
+	const internalCallback = ((t, counter) => {
+		return () => {
+			if (--t > 0) {
+				setTimeout(internalCallback, ++counter * factor);
+				callback();
+			}
+		};
+	})(times, 0);
 
-  setTimeout(internalCallback, factor);
+	setTimeout(internalCallback, factor);
 }
