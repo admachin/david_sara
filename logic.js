@@ -1,42 +1,42 @@
 const ENTRANTS = new Map(
 	[
-		["Patricia", "Adolfo"],
-		["Martín", "Iria"],
-		["Nacho", "Jaime"],
-		["Adrián", "Ana"],
-		["Juan", "Elena"],
-		["Jon", "Lucía"],
-		["Rubén", "Arancha"],
-		["Sici", "Iñigo"],
-		["Alberto", "Lydia"],
-		["Capa", "Mario"],
-		["Iván", "Sara"],
-		["Marta", "Borja"],
-		["Javier", "Álvaro"],
-		["Adolfo", "Patricia"],
-		["Iria", "Martín"],
-		["Jaime", "Nacho"],
-		["Ana", "Adrián"],
-		["Elena", "Juan"],
-		["Lucía", "Jon"],
-		["Arancha", "Rubén"],
-		["Iñigo", "Sici"],
-		["Lydia", "Alberto"],
-		["Mario", "Capa"],
-		["Sara", "Iván"],
-		["Borja", "Marta"],
-		["Álvaro", "Javier"],
-		["Martin", "Iria"],
-		["Adrian", "Ana"],
-		["Ruben", "Arancha"],
-		["Ivan", "Sara"],
-		["Lucia", "Jon"],
-		["Alvaro", "Javier"],
-		["Patri", "Adolfo"],
-		["Adri", "Ana"],
-		["Alber", "Lydia"],
-		["Javi", "Álvaro"],
-		["Adol", "Patricia"]
+		["patricia", "Adolfo"],
+		["martín", "Iria"],
+		["nacho", "Jaime"],
+		["adrián", "Ana"],
+		["juan", "Elena"],
+		["jon", "Lucía"],
+		["rubén", "Arancha"],
+		["sici", "Iñigo"],
+		["alberto", "Lydia"],
+		["capa", "Mario"],
+		["iván", "Sara"],
+		["marta", "Borja"],
+		["javier", "Álvaro"],
+		["adolfo", "Patricia"],
+		["iria", "Martín"],
+		["jaime", "Nacho"],
+		["ana", "Adrián"],
+		["elena", "Juan"],
+		["lucía", "Jon"],
+		["arancha", "Rubén"],
+		["iñigo", "Sici"],
+		["lydia", "Alberto"],
+		["mario", "Capa"],
+		["sara", "Iván"],
+		["borja", "Marta"],
+		["álvaro", "Javier"],
+		["martin", "Iria"],
+		["adrian", "Ana"],
+		["ruben", "Arancha"],
+		["ivan", "Sara"],
+		["lucia", "Jon"],
+		["alvaro", "Javier"],
+		["patri", "Adolfo"],
+		["adri", "Ana"],
+		["alber", "Lydia"],
+		["javi", "Álvaro"],
+		["adol", "Patricia"]
 	]
 );
 
@@ -66,7 +66,7 @@ function rollClick() {
 		const guest = document.getElementById("text-input").value;
 		var winner = "Nadie quiere a Milhouse :(";
 		if(ENTRANTS.has(guest)) {
-			winner = ENTRANTS.get(guest);
+			winner = ENTRANTS.get(guest.toLowerCase());
 		}
 		winnerElement.innerHTML = `<span>Tu pareja es...</span><br>${winner}`;
 	}, 4000);
