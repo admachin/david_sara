@@ -43,6 +43,7 @@ const ENTRANTS = new Map(
 const namesElement = document.getElementById("names");
 const winnerElement = document.getElementById("winner");
 const discoverButton = document.getElementById("discover-button");
+const textInput = document.getElementById("text-input");
 
 function randomName() {
 	const rand = Math.floor(Math.random() * ENTRANTS.size);
@@ -53,6 +54,7 @@ function randomName() {
 
 function rollClick() {
 	discoverButton.disabled = true;
+	textInput.disabled = true;
 	namesElement.style.display = "block";	// Show names element
 	winnerElement.style.display = "none";	// Hide winner element
 	
@@ -62,13 +64,14 @@ function rollClick() {
 		namesElement.style.display = "none";	// Hide names element
 		winnerElement.style.display = "block";	// Show winner element
 		discoverButton.disabled = false;
+		textInput.disabled = false;
 		
 		const guest = document.getElementById("text-input").value;
 		var winner = "Nadie quiere a Milhouse :(";
-		if(ENTRANTS.has(guest)) {
-			winner = ENTRANTS.get(guest.toLowerCase());
+		if(ENTRANTS.has(guest.toLowerCase())) {
+			winner = ENTRANTS.get(guest.toLowerCase()	);
 		}
-		winnerElement.innerHTML = `<span>Tu pareja es...</span><br>${winner}`;
+		winnerElement.innerHTML = `<span>Te tienes que casar con...</span><br>${winner}`;
 	}, 4000);
 }
 
