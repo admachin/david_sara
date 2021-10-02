@@ -69,9 +69,12 @@ function rollClick() {
 		const guest = document.getElementById("text-input").value;
 		var winner = "Nadie quiere a Milhouse :(";
 		if(ENTRANTS.has(guest.toLowerCase())) {
-			winner = ENTRANTS.get(guest.toLowerCase()	);
+			winner = ENTRANTS.get(guest.toLowerCase());
+			winnerElement.innerHTML = `<span>Te tienes que casar con...</span><br>${winner}`;
 		}
-		winnerElement.innerHTML = `<span>Te tienes que casar con...</span><br>${winner}`;
+		else {
+			winnerElement.innerHTML = `${winner}`;
+		}
 	}, 4000);
 }
 
