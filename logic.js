@@ -60,7 +60,7 @@ const ENTRANTS_AUX = new Map(
 		["mujeres", "Más mujeres"],	
 		["andrea", "¿Quién ha puesto esta canción?"],
 		["bernie", "Más mujeres"],
-		["stalin", "Wl guardián de nuestro camping"]
+		["stalin", "El guardián de nuestro camping"]
 	]
 );
 
