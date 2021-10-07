@@ -40,7 +40,7 @@ const ENTRANTS = new Map(
 	]
 );
 
-const ENTRANTS_AUX = New Map(
+const ENTRANTS_AUX = new Map(
 	[
 		["pablo", "¿Quién es Pablo?, prueba con personas reales"],	
 		["juanito profundo", "La Laurita"],
