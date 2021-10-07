@@ -40,6 +40,30 @@ const ENTRANTS = new Map(
 	]
 );
 
+const ENTRANTS_AUX = New Map(
+	[
+		["pablo", "¿Quién es Pablo?, prueba con personas reales"],	
+		["juanito profundo", "La Laurita"],
+		["nevado da sousa", "Espero que la Merchi no"],
+		["nevado di sousa", "Espero que la Merchi no"],	
+		["nevado", "Espero que la Merchi no"],	
+		["lluch", "No tenemos más chicles señora"],
+		["doctor rayote", "Elmo Cosillas"],
+		["albaricoque", "Pato"],	
+		["raquel", "Habrá que llamarla"],
+		["hector", "Poliamor"],	
+		["el pez dorado", "Ojo"],
+		["pijama", "Mario"],
+		["yo", "Tú"],	
+		["hola", "Tu puta madre"],
+		["soma", "No esperes encontrar ulte"],
+		["mujeres", "Más mujeres"],	
+		["andrea", "¿Quién ha puesto esta canción?"],
+		["bernie", "Más mujeres"],
+		["stalin", "Wl guardián de nuestro camping"]
+	]
+);
+
 const namesElement = document.getElementById("names");
 const winnerElement = document.getElementById("winner");
 const discoverButton = document.getElementById("discover-button");
@@ -71,6 +95,10 @@ function rollClick() {
 		if(ENTRANTS.has(guest.toLowerCase())) {
 			winner = ENTRANTS.get(guest.toLowerCase());
 			winnerElement.innerHTML = `<span>Te tienes que casar con...</span><br>${winner}`;
+		}
+		else if(ENTRANTS_AUX.has(guest.toLowerCase())) {
+			winner = ENTRANTS.get(guest.toLowerCase());
+			winnerElement.innerHTML = `${winner}`;
 		}
 		else {
 			winnerElement.innerHTML = `${winner}`;
