@@ -97,7 +97,7 @@ function rollClick() {
 			winnerElement.innerHTML = `<span>Te tienes que casar con...</span><br>${winner}`;
 		}
 		else if(ENTRANTS_AUX.has(guest.toLowerCase())) {
-			winner = ENTRANTS.get(guest.toLowerCase());
+			winner = ENTRANTS_AUX.get(guest.toLowerCase());
 			winnerElement.innerHTML = `${winner}`;
 		}
 		else {
